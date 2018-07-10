@@ -1,0 +1,133 @@
+Lambda Expression can be defined as an Anonymous Function that allows users to pass methods as arguments.
+This helps removes a lot of boilerplate code.
+Lambda Functions have no access modifiers(private, public or protected), no return type declaration and no name.
+(arg1, arg2, arg3,...) -> { body }
+---
+With JDK8, the permGen Space has been removed. So where will the metadata information be stored now? This metadata is now stored
+in a native memory are called as "MetaSpace". This memory is not a contiguous Java Heap memory.
+It allows for improvements over PermGen space in Garbage collection, auto tuning, concurrent de-allocation of metadata.
+---
+Streams can be defiled as a sequence of elements from a source that supports aggregate operations.
+The source here refers to a Collection, IO Operation or Arrays who provides data to a Stream
+--
+Default methods are the method defined in the interfaces with method body and using the default keyword.
+--
+
+Let us look at where one would use Runnable and Callable.
+
+Runnable and Callable both run on a different thread than the calling thread. But Callable can return a value and Runnable cannot.
+ So where does this really apply.
+
+Runnable : If you have a fire and forget task then use Runnable. Put your code inside a Runnable and when the run() method is called,
+you can perform your task. The calling thread really does not care when you perform your task.
+
+Callable : If you are trying to retrieve a value from a task, then use Callable. Now callable on its own will not do the job.
+You will need a Future that you wrap around your Callable and get your values on future.get (). Here the calling thread will be blocked
+till the Future comes back with results which in turn is waiting for Callable's call() method to execute.
+---
+Q: What is :: (double colon) operator-Method References in Java 8?
+A: Usually we use lambda expressions to create anonymous methods which return us the desired output. But sometimes lambda
+expressions do nothing but call an existing method. Because this lambda expression calls an existing method,
+method reference can be used here instead of Lambda function. Method reference is described using :: (double colon) symbol
+ --
+ Q: What is Optional in Java 8?
+ A: Java 8 introduced a new container class java.util.Optional<T>. It wraps a single value, if that value is available.
+ If the value is not available an empty optional should be returned. Thus it represents null value with absent value.
+ This class has various utility methods like isPresent() which helps users to avoid making use of null value checks.
+ So instead of returning the value directly, a wrapper object is returned thus users can avoid the null pointer exception
+ --equals() and hashCode()
+ At least you should know that :
+ 1) Two unequal objects may return the same hashcode.
+ 2) When two objects are equal by equals(), they must have the same hashcode.
+
+
+ What will happen if we put a key object in a HashMap which is already there?
+ This tricky Java question is part of another frequently asked question, How HashMap works in Java.
+  HashMap is also a popular topic to create confusing and tricky question in Java.
+   Answer of this question is if you put the same key again then it will replace the old mapping because HashMap doesn't allow
+   duplicate keys. The Same key will result in the same hashcode and will end up at the same position in the bucket.
+
+  Each bucket contains a linked list of Map.Entry object, which contains both Key and Value.
+   Now Java will take the Key object from each entry and compare with this new key using equals() method,
+    if that return true then value object in that entry will be replaced by new value
+
+
+ Read more: http://www.java67.com/2012/09/top-10-tricky-java-interview-questions-answers.html#ixzz53cNxYWLr
+---
+A collection is an in-memory data structure, which holds all the values that the data structure currently 
+has-every element in the collection has to be computed before it can be added to the collection. 
+In contrast, a stream is a conceptually fixed data structure in which elements are computed on demand.
+---
+filter,sorted, and map, which can be connected together to form a pipeline
+collect, which closed the pipeline and returned a result
+
+--
+filter(Predicate): Takes a predicate (java.util.function.Predicate) as an argument and returns a stream including all elements
+that match the given predicate
+distinct: Returns a stream with unique elements (according to the implementation of equals for a stream element)
+limit(n): Returns a stream that is no longer than the given size n
+skip(n): Returns a stream with the first n number of elements discarded 
+--
+Aggregate operations and parallel streams enable you to implement parallelism with non-thread-safe collections provided that you do not modify the 
+collection while you are operating on it.
+
+Executing Streams in Parallel
+================================
+You can execute streams in serial or in parallel. When a stream executes in parallel, the Java runtime partitions the 
+stream into multiple substreams.
+ Aggregate operations iterate over and process these substreams in parallel and then combine the result.
+ 
+ When you create a stream, it is always a serial stream unless otherwise specified. To create a parallel stream, invoke the operation Collection.parallelStream. Alternatively, invoke the operation BaseStream.parallel. For example, the following statement calculates the average age of all male members in parallel:
+
+double average = roster
+    .parallelStream()
+    .filter(p -> p.getGender() == Person.Sex.MALE)
+    .mapToInt(Person::getAge)
+    .average()
+    .getAsDouble();
+    
+    ==
+    Remember that stream operations use internal iteration when processing elements of a stream. Consequently,
+     when you execute a stream in parallel, the Java compiler and runtime determine the order in which to process 
+     the stream's elements to maximize the benefits of parallel computing unless otherwise
+     specified by the stream operation.
+The fifth pipeline uses the method forEachOrdered, which processes the elements of the stream in the order 
+specified by its source, regardless of whether you executed the stream in serial or parallel. 
+Note that you may lose the benefits of parallelism if you use operations like forEachOrdered with parallel streams
+
+===
+All intermediate operations are lazy. An expression, method, or algorithm is lazy if its value is evaluated only when
+ it is required
+ 
+ ===
+ Avoid using stateful lambda expressions as parameters in stream operations. 
+ A stateful lambda expression is one whose result depends on any state that might change during the execution of a pipeline. The following example adds elements from the List listOfIntegers to a n
+ 
+------------
+1) ConcurrentHashMap locks only portion of Map but SynchronizedMap locks whole MAp.
+2) ConcurrentHashMap has better performance over SynchronizedMap and more scalable.
+3) In case of multiple reader and Single writer ConcurrentHashMap is best choice
+
+ConcurrentHashMap
+----
+You should use ConcurrentHashMap when you need very high concurrency in your project.
+It is thread safe without synchronizing the whole map.
+Reads can happen very fast while write is done with a lock.
+There is no locking at the object level.
+The locking is at a much finer granularity at a hashmap bucket level.
+ConcurrentHashMap doesn’t throw a ConcurrentModificationException if one thread tries to modify it while another is iterating over it.
+ConcurrentHashMap uses multitude of locks.
+
+SynchronizedHashMap
+-----
+
+Synchronization at Object level.
+Every read/write operation needs to acquire lock.
+Locking the entire collection is a performance overhead.
+This essentially gives access to only one thread to the entire map & blocks all the other threads.
+It may cause contention.
+SynchronizedHashMap returns Iterator, which fails-fast on concurrent modification.
+-----------------
+https://stackoverflow.com/questions/1066589/iterate-through-a-hashmap/1066603#1066603
+--
+
