@@ -105,8 +105,6 @@ public class CFGThreadDeadLock {
         // sleeping main thread
         Util.sleep(2000);
 
-
-
     }
 
 }

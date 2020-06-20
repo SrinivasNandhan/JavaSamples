@@ -14,7 +14,7 @@ public class Arraysum {
                   
                  if (gd ==18)
                  {
-                	  System.exit(0);
+                	  System.exit(0); //Terminates the currently running Java Virtual Machine
                  }
             }
 

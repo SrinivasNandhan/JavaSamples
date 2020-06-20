@@ -7,7 +7,6 @@ import java.util.function.Consumer;
 public class Consumers {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		/*in-built functional interface Consumer<T> introduced in Java 8.
 		It uses examples to show how the accept() & andThen() methods of the Consumer interface are to be used
 		//Consumer’s Function Descriptor is T -> (). 

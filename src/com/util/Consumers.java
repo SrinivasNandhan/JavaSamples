@@ -18,7 +18,7 @@ public class Consumers {
 	                              new Integer(10), new Integer(200),
 	                              new Integer(101), new Integer(-10),
 	                              new Integer(0));
-		Consumer<Integer> consumer= i-> System.out.print("Number::--> " +i + " " );
+		Consumer<Integer> consumer= i-> System.out.print("Number::--> " + i + " " );
 	    
 	    printList(integerList, consumer);
 	 }

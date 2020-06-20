@@ -19,12 +19,10 @@ public class CreateStream {
 	}
 
 	private static void getStream(List<String> list) {
-		// TODO Auto-generated method stub
 		Stream<String> streams = list.stream();
 		Iterator<String> it = streams.iterator();
 
 		while (it.hasNext()) {
-
 			System.out.println(it.next() + "-");
 		}
 

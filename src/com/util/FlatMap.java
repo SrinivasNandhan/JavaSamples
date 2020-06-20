@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+// convert to string using Flatmap
 public class FlatMap {
 
 	public static void main(String[] args) {

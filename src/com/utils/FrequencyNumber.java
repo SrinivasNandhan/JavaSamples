@@ -14,10 +14,13 @@ public class FrequencyNumber {
 		HashMap<Integer,Integer> hmap = new HashMap<>();
 		for (int i=0; i<arr.length ;i++)
 		{
-			Integer num= hmap.get(arr[i]);
+			Integer num= hmap.get(arr[i]); //returns existing value if we pass same key
+			
+			//System.out.println("num :" + num);
+			
 			if (hmap.get(arr[i])==null)
 			{
-				System.out.println("null");
+				//System.out.println("null");
 				hmap.put(arr[i],1);
 			}else
 				hmap.put(arr[i],++num);
@@ -29,6 +32,7 @@ public class FrequencyNumber {
 		}
 		
 	}
+	
 
 /*	num::null
 	num::null
@@ -42,4 +46,5 @@ public class FrequencyNumber {
 	Frequency:7 is:2
 	Frequency:10 is:2*/
 
+	
 }

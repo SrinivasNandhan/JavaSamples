@@ -1,3 +1,6 @@
+the Stream API is used to process collections of objects.
+ A stream is a sequence of objects that supports various methods which can be pipelined to produce the desired result
+
 Lambda Expression can be defined as an Anonymous Function that allows users to pass methods as arguments.
 This helps removes a lot of boilerplate code.
 Lambda Functions have no access modifiers(private, public or protected), no return type declaration and no name.

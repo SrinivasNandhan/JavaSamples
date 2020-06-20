@@ -10,7 +10,7 @@ public class ArraysAsList {
 
 	public static void main(String[] args) {
 		
-		String[] arrays= new String[] {"Rao","Nan","Cha"};
+		String[] arrays= new String[] {"Rao","Nan","Cha","GAR"};
 		
 		//Stream ssdf= Arrays.stream(arrays); //create stream
 		//Stream ssdf= Stream.of(arrays);  //  create stream

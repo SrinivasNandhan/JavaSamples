@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
 public class DuplicateKeys {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		List<Hosting> list = new ArrayList<>();
         list.add(new Hosting(1, "liquidweb.com", 80000));
@@ -26,9 +25,9 @@ public class DuplicateKeys {
         System.out.println(result1);
      */   
         //List to Map and then sort &collect
-         Map result1=list.stream().
-        	sorted(Comparator.comparing(Hosting::getName)) //or compareLong with getWebSites
-        	.collect(Collectors.toMap(Hosting::getName, Hosting::getId,(oldValue,newValue)->oldValue,
+         Map result1=list.stream()
+        	 .sorted(Comparator.comparing(Hosting::getName)) //or compareLong with getWebSites
+        	 .collect(Collectors.toMap(Hosting::getName, Hosting::getId,(oldValue,newValue)->newValue,
         		 LinkedHashMap::new //// returns a LinkedHashMap, keep order
         		 				));
          		System.out.println(result1);

@@ -1,0 +1,20 @@
+Optional.ofNullable() method returns a Non-empty Optional if a value present in the given object. Otherwise returns empty Optional.
+--
+Optional.empty() method is useful to create an empty Optional object.
+--
+Java 8 has introduced a new class Optional in java.util package. It is used to represent a value is present or absent. The main advantage of this new construct is that No more too many null checks and NullPointerException.
+ It avoids any runtime NullPointerExceptions
+ --
+ Optional.isPresent() returns true if the given Optional object is non-empty. Otherwise it returns false.
+
+Optional.ifPresent() performs given action if the given Optional object is non-empty. Otherwise it returns false.
+
+The filter() method is also lazy, meaning it will not be evaluated until you call a reduction method, like collect, and it will stop as soon as it reaches the target.
+
+
+
+It takes a predicate object which is technically a function to convert an object to boolean. We pass an object and it will return true or fals
+
+==
+As in encapsulation, the data in a class is hidden from other classes, so it is also known as data-hiding.
+Encapsulation can be achieved by Declaring all the variables in the class as private and writing public methods in the class to set and get the values of variable

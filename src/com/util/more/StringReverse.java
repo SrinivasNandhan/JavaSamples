@@ -7,22 +7,22 @@ public class StringReverse {
         //String class does not have 'reverse()' method but StringBuilder  have it.
         //String class have toCharArray[] but StringBuilder  does not have that.
 
-        String name = "Howareyra";
+        String name = "Howareyou";
         byte[] bname= name.getBytes();
         byte[] result = new byte[bname.length];
         for (int i=0;i<bname.length;i++) {
             result[i] = bname[bname.length -i - 1];
         }
-          //  System.out.println(new String(result));
+           System.out.println(new String(result));
        //------------------------------------------------
        StringBuilder sb = new StringBuilder(name);  //convert String to StringBuilder
-     //  System.out.println(sb.reverse());
+       System.out.println(sb.reverse());
         //-----------------------
         StringBuilder sb1 = new StringBuilder();
         sb1.append(name);
         sb1.reverse();
        for(int i=0;i<sb1.length();i++) {
-         //  System.out.print(sb1.charAt(i));
+          System.out.print(sb1.charAt(i));
        }
        //--------------------
        // Convert String to CharArry
@@ -33,7 +33,7 @@ public class StringReverse {
         }
         //--
         String str = "Hello how are";
-          System.out.print(str.length());
+      //    System.out.println(str.length());
         char[] strc = str.toCharArray();
         int left,right=0;
         right= strc.length-1;
@@ -55,7 +55,7 @@ public class StringReverse {
 
         if(Arrays.deepEquals(stt1,stt))
         {
-             System.out.print("equals() stt stt1");
+             System.out.println("\nequals() stt stt1");
         }
 
         if (adsf==adsf1)

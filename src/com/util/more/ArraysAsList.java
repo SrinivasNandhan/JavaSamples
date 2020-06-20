@@ -10,7 +10,7 @@ public class ArraysAsList {
 
 	public static void main(String[] args) {
 		
-		String[] arrays= new String[] {"Rao","Nan","Cha"};
+		String[] arrays= new String[] {"Rao","Nan","Cha","Cha1"};
 		
 		//Stream ssdf= Arrays.stream(arrays); //create stream
 		//Stream ssdf= Stream.of(arrays);  //  create stream
@@ -21,12 +21,12 @@ public class ArraysAsList {
 		
 	//	System.out.println(firstElement.get());
 		//Object[] ol = lists.toArray();
-	//	Optional<String> lists1= lists.stream().findFirst(); //Return first element using optioanl
+	//	Optional<String> lists1= lists.stream().findFirst(); //Return first element using optional
 	//	System.out.println(lists1.toString());
 		
 		List<String> listss =lists.stream()
 				 				  	//convert list to stream
-								  .filter(i-> !"Nan".equals(i))
+								  .filter(i-> "Nan".equals(i))
 								  .collect(Collectors.toList());//collect output and converts stream to list
 								//.filter(i-> "Rao".equals(i.getName()))
 								// .findAny()

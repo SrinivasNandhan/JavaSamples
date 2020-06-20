@@ -16,7 +16,7 @@ public class FrequencyNumTreeMap {
 		for (int i=0; i<arr.length ;i++)
 		{
 			Integer num= hmap.get(arr[i]);
-			System.out.println("num::" + num);
+			//System.out.println("num::" + num);
 			if (hmap.get(arr[i])==null)
 			{
 			//	System.out.println("null");
