@@ -56,6 +56,8 @@ public class Uniquecombinations {
 				System.out.print(sum.get(i).get(j) + " ");
 			}
 			System.out.println();
+			System.out.println("TEST");
+			System.out.println("TEST#$wr");
 		}
 	}
 
