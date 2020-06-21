@@ -28,6 +28,8 @@ public class FlatMap {
 		//stringStream.forEach(System.out::print);
 		
 		 int[] intArray = {1, 2, 3, 4, 5, 6};
+		 
+	         int [] intArray ={2,2,2,};
 		 Stream<int[]> streamArray =Stream.of(intArray);
 		// IntStream intstream =streamArray.flatMapToInt(x->Arrays.stream(x));
 		// intstream.forEach(System.out::println);
