@@ -55,6 +55,7 @@ public class Uniquecombinations {
 			}
 			System.out.println();
 			System.out.println("TEST");
+			System.out.println("TEST#$wr");
 		}
 	}
 
