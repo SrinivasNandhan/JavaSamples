@@ -13,7 +13,7 @@ public class CreateStream {
 
 		list.add("RAO");
 		list.add("LOL");
-		list.add("POP");
+		list.add("POPPOP");
 
 		getStream(list);
 	}
