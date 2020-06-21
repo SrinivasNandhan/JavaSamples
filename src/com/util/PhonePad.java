@@ -12,6 +12,7 @@ public class PhonePad {
 		
 		String ph="CAT";
 		 String res="";
+		 String helo="";
 			
 		for (int i=0;i<ph.length();i++) 		{
 			
