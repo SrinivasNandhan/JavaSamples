@@ -3,7 +3,7 @@ package com.utils;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+import java.util.Set;import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -21,11 +21,14 @@ public class DuplicateEleStreams {
 //	System.out.println("top n elements :" +stream.sorted().limit(3));
 	
 	Stream<String>  stream1 = Stream.of("Test1","Test3","Test1","Test2","Test2");
+	
+	Stream<Integer>  stream21 = Stream.of(1,2,3,4,5,6,7,1,2,3);
 		
 	// Print the found duplicate elements 
-    System.out.println(findDuplicateInStream(stream1)); 
+    System.out.println("duplicates::" + findDuplicateInStream(stream1)); 
+   // System.out.println("duplicates::" + findDuplicateInStream(stream21)); 
     
-    
+    System.out.println("duplicates12::" + stream21.distinct().collect(Collectors.toList())); 
     List<Integer> numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
 
 	//get list of unique squares

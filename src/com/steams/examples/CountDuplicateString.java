@@ -23,8 +23,7 @@ public class CountDuplicateString {
 	    for (int i = 0; i < n; i++)  
 	    { 
 	  
-	        // If current name is appearing 
-	        // for the first time 
+	        // If current name is appearing for the first time 
 	        if (!set.contains(arr[i])) 
 	        { 
 	            set.add(arr[i]); 
