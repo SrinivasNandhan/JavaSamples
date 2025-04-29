@@ -1,7 +1,7 @@
 Stream is used to compute elements as per the pipelined methods without altering the original value of the object.
 
 Different Operations On Streams-
-Intermediate Operations:
+Intermediate Operations:ok
 ========
  1)	map: The map method is used to map the items in the collection to other objects according to the 
  					Predicate passed as argument.
